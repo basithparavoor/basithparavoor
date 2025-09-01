@@ -9,25 +9,25 @@
 }
 
 :root {
-  /* Light Theme Colors */
-  --bg-color-light: #f4f7f9;
+  /* Light Theme */
+  --bg-color-light: #f9fbfd;
   --text-color-light: #2c3e50;
   --header-bg-light: #ffffff;
   --card-bg-light: #ffffff;
-  --shadow-light: rgba(44, 62, 80, 0.08);
-  --accent-color: #3498db;
-  --accent-dark: #2980b9;
+  --shadow-light: rgba(44, 62, 80, 0.06);
+  --accent-color: #3b82f6;
+  --accent-dark: #2563eb;
 
-  /* Dark Theme Colors */
-  --bg-color-dark: #1e272e;
-  --text-color-dark: #ecf0f1;
-  --header-bg-dark: #2c3e50;
-  --card-bg-dark: #34495e;
-  --shadow-dark: rgba(0, 0, 0, 0.2);
+  /* Dark Theme */
+  --bg-color-dark: #111827;
+  --text-color-dark: #f3f4f6;
+  --header-bg-dark: #1f2937;
+  --card-bg-dark: #1f2937;
+  --shadow-dark: rgba(0, 0, 0, 0.5);
 }
 
 body {
-  font-family: 'Inter', 'Fira Code', monospace;
+  font-family:'Fira Code', monospace;
   line-height: 1.6;
   background-color: var(--bg-color-light);
   color: var(--text-color-light);
@@ -465,4 +465,71 @@ body.dark .post-body p {
 
 .back-link:hover {
   transform: translateX(-5px);
+}
+
+/* === Premium Enhancements === */
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(to right, var(--accent-color), var(--accent-dark));
+  color: white;
+  padding: 2rem;
+}
+body.dark .hero {
+  background: linear-gradient(to right, #0f172a, #1e293b);
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg-light);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px var(--shadow-light);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(6px);
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 40px var(--shadow-light);
+}
+body.dark .card {
+  background: rgba(31, 41, 55, 0.9);
+  box-shadow: 0 8px 30px var(--shadow-dark);
+}
+
+/* Buttons */
+.btn {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.8rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  transform: translateY(-4px);
+}
+
+/* Footer */
+.footer {
+  background: var(--header-bg-light);
+  color: #6b7280;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid #e5e7eb;
+}
+body.dark .footer {
+  background: var(--header-bg-dark);
+  color: #9ca3af;
+  border-top-color: #374151;
 }
